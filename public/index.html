@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>捞尸人</title>
+    <meta name="theme-color" content="#8d3b2f">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css?v=10">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <button class="icon-button back-button" id="backButton" type="button" aria-label="返回" aria-hidden="true" tabindex="-1">
+          <span aria-hidden="true">←</span>
+        </button>
+        <div class="title-block">
+          <h1 id="bookTitle">捞尸人</h1>
+        </div>
+        <button class="icon-button settings-button" id="settingsButton" type="button" aria-label="显示设置">
+          <span aria-hidden="true">⚙</span>
+        </button>
+      </header>
+
+      <main>
+        <section class="screen is-active" id="catalogScreen">
+          <div class="chapter-list" id="chapterList"></div>
+          <div class="empty-state" id="emptyState">
+            <h2>还没有内容</h2>
+            <p>导入本地章节数据后，可以在这台设备上离线阅读。</p>
+            <label class="import-button">
+              导入数据
+              <input id="importFileInput" type="file" accept=".json,application/json">
+            </label>
+          </div>
+        </section>
+
+        <section class="screen reader-screen" id="readerScreen">
+          <article class="reader-frame">
+            <h2 id="readerTitle">请选择章节</h2>
+            <div class="reader-content" id="readerContent"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+    <aside class="settings-drawer" id="settingsDrawer" hidden aria-hidden="true" aria-labelledby="settingsTitle">
+      <div class="drawer-head">
+        <h2 id="settingsTitle">显示设置</h2>
+        <button class="icon-button" id="closeSettings" type="button" aria-label="关闭设置">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <div class="setting-row">
+        <label for="fontSizeInput">字号</label>
+        <div class="range-line">
+          <input id="fontSizeInput" type="range" min="16" max="28" step="1">
+          <output id="fontSizeValue"></output>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <label for="lineHeightInput">行距</label>
+        <div class="range-line">
+          <input id="lineHeightInput" type="range" min="1.5" max="2.4" step="0.1">
+          <output id="lineHeightValue"></output>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <span>背景</span>
+        <div class="theme-options" role="radiogroup" aria-label="背景">
+          <button class="theme-swatch paper" data-theme="paper" type="button" aria-label="纸页"></button>
+          <button class="theme-swatch ivory" data-theme="ivory" type="button" aria-label="暖白"></button>
+          <button class="theme-swatch green" data-theme="green" type="button" aria-label="护眼"></button>
+          <button class="theme-swatch mist" data-theme="mist" type="button" aria-label="雾蓝"></button>
+          <button class="theme-swatch rose" data-theme="rose" type="button" aria-label="淡粉"></button>
+          <button class="theme-swatch night" data-theme="night" type="button" aria-label="夜读"></button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <span>字型</span>
+        <div class="font-options" role="radiogroup" aria-label="字型">
+          <button data-font-family="serif" type="button">衬线</button>
+          <button data-font-family="song" type="button">宋体</button>
+          <button data-font-family="kai" type="button">楷体</button>
+          <button data-font-family="sans" type="button">黑体</button>
+        </div>
+      </div>
+    </aside>
+
+    <script src="app.js?v=10" type="module"></script>
+  </body>
+</html>
