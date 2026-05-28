@@ -1,9 +1,9 @@
-const CACHE_NAME = "slow-reader-shell-v2";
+const CACHE_NAME = "slow-reader-shell-v3";
 const SHELL_ASSETS = [
   "./",
   "index.html",
-  "styles.css?v=10",
-  "app.js?v=10",
+  "styles.css?v=11",
+  "app.js?v=11",
   "manifest.webmanifest",
   "icon.svg"
 ];

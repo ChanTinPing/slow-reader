@@ -106,7 +106,7 @@ function sanitizeSettings(input, current) {
   const next = { ...current };
   if (typeof input.bookTitle === "string") next.bookTitle = input.bookTitle.trim().slice(0, 80) || current.bookTitle;
   if (typeof input.sourceUrl === "string") next.sourceUrl = input.sourceUrl.trim().slice(0, 500);
-  if (["paper", "ivory", "green", "mist", "rose", "night"].includes(input.theme)) next.theme = input.theme;
+  if (["paper", "parchment", "ivory", "green", "mist", "rose", "night"].includes(input.theme)) next.theme = input.theme;
   if (["serif", "song", "kai", "sans"].includes(input.fontFamily)) next.fontFamily = input.fontFamily;
   if (Number.isFinite(Number(input.fontSize))) next.fontSize = Math.min(28, Math.max(16, Number(input.fontSize)));
   if (Number.isFinite(Number(input.lineHeight))) next.lineHeight = Math.min(2.4, Math.max(1.5, Number(input.lineHeight)));
